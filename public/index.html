@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Portfolio | Software Engineer</title>
+  <meta name="description" content="Personal portfolio of a Software Development Engineer skilled in Java, JavaScript, Node.js, MongoDB and MySQL. Explore projects, skills, and get in touch." />
+  <meta name="keywords" content="software engineer, Java developer, Node.js, MongoDB, full stack developer, portfolio" />
+  <meta property="og:title" content="SDE Portfolio | Full-Stack Engineer" />
+  <meta property="og:description" content="Explore my projects and skills as a Software Development Engineer." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ─── Custom Cursor ───────────────────────────────── -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ─── Loader ──────────────────────────────────────── -->
+  <div id="loader" role="status" aria-label="Loading portfolio">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Initializing<span class="loader-dots">...</span></div>
+    </div>
+  </div>
+
+  <!-- ─── Navigation ──────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">SDE</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta" id="nav-cta-btn">Hire Me</a>
+    <button class="nav-hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ────────────────────────────────────────── -->
+  <section id="hero" aria-label="Hero section">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-title reveal-up">
+        <span class="hero-greeting">Hello, I'm</span>
+        <span class="hero-name" id="typed-name">Arjav Upadhyay</span>
+        <span class="hero-role">
+          <span class="role-prefix">&lt;</span>
+          <span id="typed-role">Software Engineer</span>
+          <span class="role-suffix">/&gt;</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle reveal-up">
+        Building scalable backends, beautiful frontends &amp; everything in between.<br/>
+        Passionate about <span class="accent">Java</span>, <span class="accent">Node.js</span>, <span class="accent">MongoDB</span> and crafting clean code.
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#projects" class="btn btn-primary" id="view-projects-btn">
+          <span>View Projects</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary" id="contact-hero-btn">Get In Touch</a>
+      </div>
+      <div class="hero-stats reveal-up">
+        <div class="stat">
+          <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="6">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ────────────────────────────────────────── -->
+  <section id="about" aria-label="About section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Who I Am</span>
+        <h2 class="section-title reveal-up">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <canvas id="about-canvas" aria-hidden="true"></canvas>
+          <div class="about-glow" aria-hidden="true"></div>
+        </div>
+        <div class="about-content reveal-right">
+          <p class="about-lead">
+            I'm a <strong>Software Development Engineer</strong> with a passion for building robust, scalable applications across the full stack.
+          </p>
+          <p class="about-body">
+            I specialize in crafting high-performance backend services with <strong>Java</strong> and <strong>Node.js</strong>, designing intelligent data architectures using <strong>MongoDB</strong> and <strong>MySQL</strong>, and building pixel-perfect frontends with <strong>HTML, CSS &amp; JavaScript</strong>.
+          </p>
+          <p class="about-body">
+            I believe great software is a blend of clean architecture, elegant code, and intuitive user experience. When I'm not coding, I'm exploring new technologies and contributing to open-source.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">⚡</span>
+              <span>Performance-first mindset</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🏗️</span>
+              <span>Clean Architecture advocate</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🌐</span>
+              <span>Full-Stack Development</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">📦</span>
+              <span>RESTful API Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ───────────────────────────────────────── -->
+  <section id="skills" aria-label="Skills section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">What I Know</span>
+        <h2 class="section-title reveal-up">Tech <span class="gradient-text">Stack</span></h2>
+        <p class="section-subtitle reveal-up">Technologies I work with to build amazing products</p>
+      </div>
+      <!-- Dynamic Skills Tabs -->
+      <div class="skills-wrapper reveal-up">
+
+        <!-- Tab buttons -->
+        <div class="skills-tabs" id="skills-tabs" role="tablist" aria-label="Skill categories">
+          <button class="s-tab active" data-cat="languages" id="tab-languages" role="tab" aria-selected="true">
+            <span class="s-tab-icon">☕</span> Languages
+          </button>
+          <button class="s-tab" data-cat="backend" id="tab-backend" role="tab" aria-selected="false">
+            <span class="s-tab-icon">⚙️</span> Backend
+          </button>
+          <button class="s-tab" data-cat="databases" id="tab-databases" role="tab" aria-selected="false">
+            <span class="s-tab-icon">🗄️</span> Databases
+          </button>
+          <button class="s-tab" data-cat="tools" id="tab-tools" role="tab" aria-selected="false">
+            <span class="s-tab-icon">🛠️</span> Tools
+          </button>
+          <div class="s-tab-ink" id="s-tab-ink" aria-hidden="true"></div>
+        </div>
+
+        <!-- Skill cards rendered by JS -->
+        <div class="skills-panel" id="skills-panel" role="tabpanel" aria-live="polite"></div>
+
+      </div><!-- /.skills-wrapper -->
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ──────────────────────────────────────── -->
+  <section id="projects" aria-label="Projects section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">What I've Built</span>
+        <h2 class="section-title reveal-up">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle reveal-up">Real-world applications that solve real problems</p>
+      </div>
+      <!-- Filter Buttons -->
+      <div class="project-filters reveal-up" id="project-filters" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" id="filter-all">All</button>
+        <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false" id="filter-fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false" id="filter-backend">Backend</button>
+        <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false" id="filter-frontend">Frontend</button>
+      </div>
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid" aria-live="polite">
+        <div class="projects-loading" id="projects-loading">
+          <div class="loading-spinner" aria-hidden="true"></div>
+          <p>Loading projects...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ───────────────────────────────────────── -->
+  <section id="contact" aria-label="Contact section">
+    <canvas id="contact-canvas" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">Get In Touch</span>
+        <h2 class="section-title reveal-up">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle reveal-up">Have a project in mind? Let's build something amazing together.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-card" id="contact-email-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>avuy2207@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-location-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>Noida 🇮🇳</p>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-availability-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Availability</h4>
+              <p>Open to opportunities</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal-right">
+          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" name="name" placeholder="John Doe" required autocomplete="name" />
+                <span class="form-error" id="name-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+                <span class="form-error" id="email-error"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="Project Collaboration" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message *</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              <span class="form-error" id="message-error"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contact-submit-btn">
+              <span id="contact-btn-text">Send Message</span>
+              <svg id="contact-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div id="form-status" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">SDE</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Arjav Upadhyay. Built with 
+        <span class="heart">❤️</span> using Node.js, MongoDB &amp; Three.js
+      </p>
+      <div class="footer-links">
+        <a href="#hero" class="footer-link" id="footer-home-link">Home</a>
+        <a href="#projects" class="footer-link" id="footer-projects-link">Projects</a>
+        <a href="#contact" class="footer-link" id="footer-contact-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Back to Top ───────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ─── Scripts ───────────────────────────────────────── -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
