@@ -1,102 +1,118 @@
-# Personal Portfolio — 3D Full-Stack Website
+# 🌟 3D Full-Stack Personal Portfolio
 
-A stunning 3D personal portfolio built with **Node.js/Express**, **MongoDB**, **Three.js**, and **GSAP**.
+A high-performance, responsive **3D Personal Portfolio** built for **Arjav Upadhyay** (Software Development Engineer). Featuring Three.js interactive 3D visualizations, dynamic tabbed tech stack skills system, Nodemailer direct inbox email integration, Express REST API, MongoDB persistence, and Netlify Serverless deployment readiness.
 
-## 🚀 Quick Start
+![Node.js](https://img.shields.io/badge/Node.js-v18+-green?style=for-the-badge&logo=nodedotjs)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify)
 
-### 1. Install dependencies
-```bash
-cd personalportfolio
-npm install
-```
+---
 
-### 2. Configure environment
-```bash
-# Copy the example env file
-cp .env.example .env
-# Edit .env with your MongoDB Atlas URI
-```
+## ✨ Features
 
-> **Without MongoDB**: The server still works! Projects are served from in-memory fallback data.
+- 🌌 **3D Particle Galaxy Hero**: Interactive Three.js particle galaxy with mouse parallax and rotating icosahedron core.
+- 🧬 **3D DNA Code Helix**: Rotating torus-knot 3D scene in the About section.
+- 🗂️ **Dynamic Tabbed Tech Stack**: Glassmorphic filter tabs (Languages, Backend, Databases, Tools) with sliding indicator pill and proficiency bars.
+- 💎 **Interactive 3D Project Cards**: Filterable project gallery with 3D tilt effects, fetched from Express/MongoDB.
+- 📧 **Direct Inbox Email Delivery**: Contact form integrated with **Nodemailer** for direct email delivery to `avuy2207@gmail.com` with Reply-To header support.
+- ✨ **GSAP ScrollTrigger**: Smooth reveal animations on scroll across all sections.
+- 📱 **Responsive Design**: Modern deep-space glassmorphism UI styled with CSS variables and custom responsive breakpoints.
 
-### 3. Start the server
-```bash
-# Development (auto-restart)
-npm run dev
+---
 
-# Production
-npm start
-```
+## 🛠️ Tech Stack
 
-Open **http://localhost:5000** 🎉
-
-### 4. Seed the database (optional)
-```bash
-npm run seed
-```
+- **Frontend**: HTML5, Vanilla CSS3, JavaScript (ES6+), Three.js, GSAP
+- **Backend**: Node.js, Express.js, Nodemailer
+- **Database**: MongoDB / Mongoose ODM (with automatic fallback data layer)
+- **Deployment**: Netlify Functions (`serverless-http`) / Render / Vercel
 
 ---
 
 ## 📁 Project Structure
+
 ```
 personalportfolio/
-├── server.js              # Express entry point
+├── netlify.toml                # Netlify deployment configuration
+├── server.js                   # Main Express server & app export
+├── seed.js                     # Seed script for MongoDB
+├── netlify/
+│   └── functions/
+│       └── api.js              # Netlify Serverless Function wrapper
 ├── routes/
-│   ├── projects.js        # CRUD API for projects
-│   └── contact.js         # Contact form API
+│   ├── projects.js             # Project CRUD REST API endpoints
+│   └── contact.js              # Contact submission & Nodemailer dispatcher
 ├── models/
-│   ├── Project.js         # Mongoose Project schema
-│   └── Contact.js         # Mongoose Contact schema
-├── seed.js                # DB seeder with 6 sample projects
+│   ├── Project.js              # Mongoose schema for projects
+│   └── Contact.js              # Mongoose schema for contact messages
 └── public/
-    ├── index.html         # Single-page portfolio
-    ├── css/style.css      # Full design system
+    ├── index.html              # Main portfolio SPA HTML
+    ├── _redirects              # Netlify SPA routing rules
+    ├── css/style.css           # Glassmorphism design system
     └── js/
-        ├── three-scene.js # Three.js 3D scenes
-        ├── projects.js    # Projects API + cards
-        └── main.js        # GSAP + UI interactions
+        ├── three-scene.js      # Three.js 3D canvas renderer
+        ├── projects.js         # API fetch & project card generator
+        └── main.js             # GSAP, dynamic skills tabs, UI handlers
 ```
 
 ---
 
-## 🌐 API Endpoints
+## 🚀 Getting Started
 
-| Method | Route             | Description          |
-|--------|-------------------|----------------------|
-| GET    | /api/projects     | Get all projects     |
-| POST   | /api/projects     | Add a project        |
-| GET    | /api/projects/:id | Get single project   |
-| PUT    | /api/projects/:id | Update a project     |
-| DELETE | /api/projects/:id | Delete a project     |
-| POST   | /api/contact      | Submit contact form  |
+### 1. Clone the repository
+```bash
+git clone https://github.com/deadguycodes/Personalportfolio.git
+cd Personalportfolio
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+Create a `.env` file in the root directory:
+```env
+PORT=5000
+NODE_ENV=development
+
+# Optional: MongoDB URI
+MONGO_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/portfolio
+
+# Gmail Direct Email Delivery
+EMAIL_USER=avuy2207@gmail.com
+EMAIL_PASS=your_16_digit_gmail_app_password
+RECEIVER_EMAIL=avuy2207@gmail.com
+```
+
+### 4. Run the Development Server
+```bash
+npm run dev
+# Server running at http://localhost:5000
+```
+
+---
+
+## ☁️ Netlify Deployment
+
+This repository is pre-configured for 1-click Netlify deployment via `netlify.toml` and `netlify/functions/api.js`.
+
+1. Import this repository to **Netlify** (`app.netlify.com`).
+2. Add your environment variables under **Site Settings > Environment Variables**:
+   - `EMAIL_USER`
+   - `EMAIL_PASS`
+   - `RECEIVER_EMAIL`
+3. Click **Deploy Site**!
 
 ---
 
-## 🎨 Features
-- 🌌 **Three.js 3D Hero** — animated particle galaxy + wireframe sphere
-- 🔮 **3D Skills Globe** — Fibonacci-distributed rotating tag sphere
-- 💎 **Glassmorphism project cards** — 3D tilt on hover, fetched from MongoDB
-- ✨ **GSAP ScrollTrigger** — smooth section reveal animations
-- 🌀 **Typewriter effect** — cycling role titles
-- 📧 **Contact form** — client-side validation + API submission
-- 🎯 **Custom cursor** — glowing dot + lagging ring
-- 📱 **Fully responsive** — mobile hamburger menu
+## 📝 License
 
----
-
-## ☁️ Deployment
-
-### Frontend + Backend (Render)
-1. Push to GitHub
-2. Create a new Web Service on [Render](https://render.com)
-3. Set `Build Command: npm install`
-4. Set `Start Command: npm start`
-5. Add env variable: `MONGO_URI`
-
-### Frontend only (Netlify)
-Drag the `public/` folder into [Netlify Drop](https://app.netlify.com/drop)
-
----
+Designed & Developed by **Arjav Upadhyay**.
+Licensed under the [MIT License](LICENSE).
 
 ## ✏️ Customization
 Update these in `public/index.html`:
