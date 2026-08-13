@@ -2,6 +2,10 @@
 
 A high-performance, responsive **3D Personal Portfolio** built for **Arjav Upadhyay** (Software Development Engineer). Featuring Three.js interactive 3D visualizations, dynamic tabbed tech stack skills system, Nodemailer direct inbox email integration, Express REST API, MongoDB persistence, and Netlify Serverless deployment readiness.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-https%3A%2F%2Fpersonalportfoliobyau.netlify.app%2F-00C7B7?style=for-the-badge&logo=netlify)](https://personalportfoliobyau.netlify.app/)
+
+🔗 **Live Website**: [https://personalportfoliobyau.netlify.app/](https://personalportfoliobyau.netlify.app/)
+
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green?style=for-the-badge&logo=nodedotjs)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb)
